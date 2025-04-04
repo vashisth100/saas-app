@@ -1,4 +1,4 @@
-"use client"
+
 import { auth } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
 import Link from "next/link";
@@ -7,8 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 
 export default async function Home() {
-  const authData = await auth();
-  const {userId} = authData;
+  const { userId} = await auth();
 
   if (userId) {
     redirect("/dashboard");

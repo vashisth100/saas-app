@@ -44,10 +44,7 @@ function Signup() {
         }
 
         try {
-            await signUp.create({
-                emailAddress,
-                password
-            })
+            
 
             await signUp.prepareEmailAddressVerification({
                 strategy: "email_code"
